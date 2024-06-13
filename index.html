@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Eval3D: Interpretable and Fine-grained Evaluation for 3D Generation">
+  <meta name="keywords" content="Nerfies, D-NeRF, NeRF">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Eval3D: Interpretable and Fine-grained Evaluation for 3D Generation</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script> -->
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+</nav>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Eval3D: Interpretable and Fine-grained Evaluation for 3D Generation</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="">Shivam Duggal*</a>,
+            </span>
+            <span class="author-block">
+              <a href="">Yushi Hu*</a>,
+            </span>
+            <span class="author-block">
+              <a href="">Oscar Michel</a>,
+            </span>
+            <span class="author-block">
+              <a href="">Aniruddha Kembhavi</a>,
+            </span>
+            <span class="author-block">
+              <a href="">William T. Freeman</a>,
+            </span>
+            <span class="author-block">
+              <a href="">Noah A. Smith</a>,
+            </span>
+            <span class="author-block">
+              <a href="">Ranjay Krishna</a>,
+            </span>
+            <span class="author-block">
+              <a href="">Antonio Torralba</a>,
+            </span>
+            <span class="author-block">
+              <a href="">Ali Farhadi</a>,
+            </span>
+            <span class="author-block">
+              <a href="">Wei-Chiu Ma</a>, 
+            </span>
+            
+          </div>
+
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Video Link. -->
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+              <!-- Dataset Link. -->
+              <span class="link-block">
+                <a href="" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Data</span>
+                  </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Despite the unprecedented progress in the field of 3D generation, current systems still often fail to produce high-quality 3D assets that are visually appealing and geometrically and semantically consistent across multiple viewpoints. To effectively assess the quality of the generated 3D data, there is a need for a reliable 3D evaluation tool. Unfortunately, existing 3D evaluation metrics often overlook the geometric quality of generated assets or merely rely on black-box multimodal large language models for coarse assessment. In this paper, we introduce Eval3D, a fine-grained, interpretable evaluation tool that can faithfully evaluate the quality of generated 3D assets based on various distinct yet complementary criteria. Our key observation is that many desired properties of 3D generation, such as semantic and geometric consistency, can be effectively captured by measuring the consistency among various foundation models and tools. We thus leverage a diverse set of models and tools as probes to evaluate the inconsistency of generated 3D assets across different aspects. Compared to prior work, Eval3D provides pixel-wise measurement, enables accurate 3D spatial feedback, and aligns more closely with human judgments. We comprehensively evaluate existing 3D generation models using Eval3D and highlight the limitations and challenges of current models. 
+          </p>
+        </div>
+      
+        <div>
+          <p>The webpage will be updated over time, will full code and data release post acceptance.</p>
+        </div>
+      
+      </div>
+    </div>
+    <!--/ Abstract. -->
+  </div>
+</section>
+
+
+
+<footer class="footer">
+    <div class="container">
+        <div class="content has-text-centered">
+            <!-- TODO: UPDATE -->
+            <a class="icon-link" href="" target="_blank">
+                <i class="ai ai-arxiv"></i>
+            </a>
+            &nbsp;
+            <!-- TODO: UPDATE -->
+            <a class="icon-link" href="" target="_blank">
+                <i class="fas fa-file-pdf"></i>
+            </a>
+            <!-- &nbsp;
+            <a class="icon-link" href="https://youtu.be/1hYtGZ0CUSA" target="_blank">
+                <i class="fab fa-youtube"></i>
+            </a> -->
+            <!-- &nbsp;
+            <a class="icon-link" href="./static/docs/InternetExplorer.pptx" target="_blank">
+                <i class="fas fa-file-powerpoint"></i>
+            </a> -->
+            &nbsp;
+            <a class="icon-link" href=""
+                target="_blank">
+                <i class="fab fa-github"></i>
+            </a>
+        </div>
+        <div class="columns is-centered">
+            <div class="content">
+                <p>
+                    Page source code was adapted from
+                    <a href="https://nerfies.github.io" target="_blank">here</a>
+                </p>
+            </div>
+        </div>
+</footer>
+
+</body>
+</html>
